@@ -15,7 +15,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+
 Route::controller(DashboardController::class)->group(function (){
     Route::get('/dashboard','index')->name('dashboard');
+    Route::get('/logout','logout')->name('dashboard.logout');
+    Route::get('/auth/confirmation','confirmation')->name('dashboard.confirmation');
 });
 Auth::routes();
+Auth::routes(['verify' => true]);
