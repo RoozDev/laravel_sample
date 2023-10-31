@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Backend\DashboardController;
+use App\Http\Controllers\Backend\UserController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -17,9 +18,16 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::controller(DashboardController::class)->group(function (){
-    Route::get('/dashboard','index')->name('dashboard');
+    Route::get('/dashboard','index')->name('dashboard')->middleware('auth');
     Route::get('/logout','logout')->name('dashboard.logout');
     Route::get('/auth/confirmation','confirmation')->name('dashboard.confirmation');
 });
+Route::controller(UserController::class)->group(function (){
+   Route::get('/users','index')->name('users.index')->middleware('auth');
+   Route::post('/users/store','store')->name('users.store')->middleware('auth');
+    Route::get('/users/edit/{id}','edit')->name('users.edit')->middleware('auth');
+    Route::post('/users/update','update')->name('users.update')->middleware('auth');
+});
+
 Auth::routes();
 Auth::routes(['verify' => true]);

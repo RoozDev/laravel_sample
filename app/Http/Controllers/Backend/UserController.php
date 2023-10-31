@@ -1,0 +1,57 @@
+<?php
+
+namespace App\Http\Controllers\Backend;
+
+use App\Http\Controllers\Controller;
+use App\Models\User;
+use Illuminate\Http\Request;
+use Illuminate\Support\Carbon;
+use Illuminate\Support\Facades\Hash;
+
+class UserController extends Controller
+{
+    //
+    public function index(){
+        $users = User::query()->first()->get();
+        return view('backend.users.index',compact('users'));
+    }
+    public function store(Request $request){
+        $request->validate([
+            'name' => 'required',
+            'email'=> 'required',
+            'password' => 'required|min:8',
+            'password_confirmation' => 'required|min:8|same:password',
+        ]);
+        $user = new User();
+        $user->name = $request['name'];
+        $user->email = $request['email'];
+        $user->password = $request['password'];
+        $user->save();
+        return to_route('users.index');
+    }
+    public function edit(string $id){
+        try {
+            $user = User::query()->find($id);
+            return response()->json(['status' => 200, 'user' => $user]);
+        } catch (\Exception $e) {
+            return response()->json(['status' => 500, 'error' => $e->getMessage()], 500);
+        }
+    }
+    public function update(Request $request){
+
+        $request->validate([
+            'name' => 'required',
+            'email'=> 'required',
+            'password' => 'required|string',
+            'password_confirmation' => 'required|same:password|min:6|string',
+        ]);
+        $user_id = $request['user_id'];
+        $user = User::query()->where('id',$user_id)->first();
+        $user->name = $request['name'];
+        $user->email = $request['email'];
+        $user->password = Hash::make($request['password']);
+        $user->save();
+        return to_route('users.index');
+
+    }
+}
