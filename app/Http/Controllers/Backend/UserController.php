@@ -59,4 +59,14 @@ class UserController extends Controller
         $user->delete();
         return to_route('users.index');
     }
+    public function show($id){
+        try {
+            $user = User::query()->findOrFail($id);
+            return response()->json(['status' => 200, 'user' => $user]);
+
+        }catch (\Exception $e){
+            return response()->json(['status' => 500, 'error' => $e->getMessage()], 500);
+        }
+
+    }
 }
