@@ -27,6 +27,7 @@ Route::controller(UserController::class)->group(function (){
    Route::post('/users/store','store')->name('users.store')->middleware('auth');
     Route::get('/users/edit/{id}','edit')->name('users.edit')->middleware('auth');
     Route::post('/users/update','update')->name('users.update')->middleware('auth');
+    Route::get('/users/destroy/{id}','destroy')->name('users.destroy')->middleware('auth');
 });
 
 Auth::routes();

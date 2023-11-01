@@ -54,4 +54,9 @@ class UserController extends Controller
         return to_route('users.index');
 
     }
+    public function destroy($id){
+        $user = User::query()->findOrFail($id);
+        $user->delete();
+        return to_route('users.index');
+    }
 }

@@ -36,7 +36,7 @@
                     <div class="mb-3">
                         <label for="password" class="form-label">نمایش / پنهان رمز عبور</label>
                         <div class="input-group input-group-merge">
-                            <input name="password" type="password" id="password" class="form-control" placeholder="Enter your password">
+                            <input name="password" type="password" id="password" class="form-control" placeholder="رمز خود را وارد کنید ...">
                             <div class="input-group-text" data-password="false">
                                 <span class="password-eye"></span>
                             </div>
@@ -47,7 +47,7 @@
                     <div class="mb-3">
                         <label for="password" class="form-label">تایید نمایش / پنهان رمز عبور</label>
                         <div class="input-group input-group-merge">
-                            <input name="password_confirmation" type="password" id="password" class="form-control" placeholder="Enter your password">
+                            <input name="password_confirmation" type="password" id="password" class="form-control" placeholder="رمز خود را وارد کنید ...">
                             <div class="input-group-text" data-password="false">
                                 <span class="password-eye"></span>
                             </div>

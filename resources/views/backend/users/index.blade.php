@@ -33,7 +33,7 @@
 @include('backend.users.includes.users_modal_includes')
 @include('backend.users.includes.users_edit_modal_includes')
 @include('backend.users.includes.users_edit_script')
-
+@include('backend.users.includes.users_sweetalert_modal')
 
                     <div class="card-body">
 
@@ -58,9 +58,10 @@
                                 <td>
                                     <div class="button-list">
                                         <!-- Sign Up modal -->
-                                        <button  id="editBtn" type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#edit-modal" value="{{$user->id}}">
+                                        <button  id="editBtn" type="button" class="btn btn-warning btn-sm" data-bs-toggle="modal" data-bs-target="#edit-modal" value="{{$user->id}}">
                                             <i class="ti-pencil"></i>
                                         </button>
+                                        <a href="{{ route('users.destroy',$user['id']) }}" class="delete btn btn-danger btn-sm" id="delete"><i class="fe-trash-2"></i></a>
                                     </div>
                                 </td>
                             </tr>
