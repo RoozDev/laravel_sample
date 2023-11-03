@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Backend\DashboardController;
+use App\Http\Controllers\Backend\ProfileController;
 use App\Http\Controllers\Backend\UserController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -25,11 +26,14 @@ Route::controller(DashboardController::class)->group(function (){
 Route::controller(UserController::class)->group(function (){
    Route::get('/users','index')->name('users.index')->middleware('auth');
    Route::post('/users/store','store')->name('users.store')->middleware('auth');
-    Route::get('/users/edit/{id}','edit')->name('users.edit')->middleware('auth');
-    Route::post('/users/update','update')->name('users.update')->middleware('auth');
-    Route::get('/users/destroy/{id}','destroy')->name('users.destroy')->middleware('auth');
-    Route::get('/users/show/{id}','show')->name('users.show')->middleware('auth');
+   Route::get('/users/edit/{id}','edit')->name('users.edit')->middleware('auth');
+   Route::post('/users/update','update')->name('users.update')->middleware('auth');
+   Route::get('/users/destroy/{id}','destroy')->name('users.destroy')->middleware('auth');
+   Route::get('/users/show/{id}','show')->name('users.show')->middleware('auth');
 });
-
+Route::controller(ProfileController::class)->group(function (){
+    Route::get('/user/profile','index')->name('user.profile');
+    Route::post('/user/profile/store','store')->name('user.profile.store');
+});
 Auth::routes();
 Auth::routes(['verify' => true]);
