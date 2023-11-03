@@ -52,7 +52,7 @@
                     <div class="tab-content">
 
                         <div class="" id="settings">
-                            <form action="{{ route('user.profile.store') }}" method="post" enctype="multipart/form-data">
+                            <form id="profileForm" action="{{ route('user.profile.store') }}" method="post" enctype="multipart/form-data">
                                 @csrf
                                 <h5 class="mb-4 text-uppercase"><i class="mdi mdi-account-circle me-1"></i> Personal Info</h5>
                                 <div class="row">
@@ -73,7 +73,7 @@
                                     <div class="col-md-12">
                                         <div class="mb-3">
                                             <label for="example-fileinput" class="form-label">عکس نمایه</label>
-                                            <input name="photo" type="file" id="image" class="form-control">
+                                            <input  name="photo" type="file" id="image" class="form-control">
                                             <br>
                                             <img src="{{ !empty($adminData->photo) ?
                                                           url('upload/admin_images/'.$adminData->photo) :
@@ -122,7 +122,6 @@
                 reader.readAsDataURL(e.target.files['0']);
             });
         });
-
     </script>
 
 @endsection

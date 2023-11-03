@@ -1,5 +1,6 @@
 <!-- Vendor js -->
 <script src="{{ asset('backend/assets/js/vendor.min.js') }}"></script>
+
 {{-- datatable scripts --}}
 <script src="{{ asset('backend/assets/libs/datatables.net/js/jquery.dataTables.min.js') }}"></script>
 <script src="{{ asset('backend/assets/libs/datatables.net-bs5/js/dataTables.bootstrap5.min.js') }}"></script>
@@ -29,3 +30,5 @@
 
 <!-- App js-->
 <script src="{{ asset('backend/assets/js/app.min.js') }}"></script>
+{{-- toastr js--}}
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>

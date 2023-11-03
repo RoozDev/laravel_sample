@@ -26,9 +26,28 @@ class ProfileController extends Controller
             $file_name = time() . '_' . uniqid() . '.' . $fileExtension;
             $file->move( public_path('upload/admin_images'), $file_name);
             $data->photo = $file_name;
+            $data->name = $request['name'];
+            $data->email = $request['email'];
+            $data->save();
+            $notification =
+                [
+                    'message' => ' نمایه با موققیت ثبت شد .',
+                    'alert-type' => 'success'
+                ];
+            return to_route('dashboard')->with($notification);
         }
-        $data->save();
-        return to_route('dashboard');
+        else{
+            $data->name = $request['name'];
+            $data->email = $request['email'];
+            $data->save();
+            $notification =
+                [
+                    'message' => ' نمایه با موققیت ثبت شد .',
+                    'alert-type' => 'success'
+                ];
+            return to_route('dashboard')->with($notification);
+        }
+
 
     }
 }

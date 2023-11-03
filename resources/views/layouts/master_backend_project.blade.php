@@ -132,8 +132,8 @@
 
 
                     <li>
-                        <a href="">
-                            <i class="{{ route('users.index') }}"></i>
+                        <a href="{{ route('users.index') }}">
+                            <i class="fe-users"></i>
                             <span> کاربران </span>
                         </a>
                     </li>
@@ -181,8 +181,34 @@
 @include('backend.dashboard.includes.master_right_sidebar')
 <!-- /Right-bar -->
 
+
+
+
 <!-- Right bar overlay-->
 <div class="rightbar-overlay"></div>
 @include('backend.dashboard.includes.master_footer')
+{{--  toastr  --}}
+<script>
+    @if(Session::has('message'))
+    var type = "{{ Session::get('alert-type','info') }}"
+    switch(type){
+        case 'info':
+            toastr.info(" {{ Session::get('message') }} ");
+            break;
+
+        case 'success':
+            toastr.success(" {{ Session::get('message') }} ");
+            break;
+
+        case 'warning':
+            toastr.warning(" {{ Session::get('message') }} ");
+            break;
+
+        case 'error':
+            toastr.error(" {{ Session::get('message') }} ");
+            break;
+    }
+    @endif
+</script>
 </body>
 </html>

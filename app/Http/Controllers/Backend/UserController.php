@@ -27,7 +27,12 @@ class UserController extends Controller
         $user->email = $request['email'];
         $user->password = $request['password'];
         $user->save();
-        return to_route('users.index');
+        $notification =
+            [
+                'message' => ' کاربر با موفقیت اضافه شد',
+                'alert-type' => 'success'
+            ];
+        return to_route('users.index')->with($notification);
     }
     public function edit(string $id){
         try {
@@ -51,7 +56,12 @@ class UserController extends Controller
         $user->email = $request['email'];
         $user->password = Hash::make($request['password']);
         $user->save();
-        return to_route('users.index');
+        $notification =
+            [
+                'message' => ' تغییرات با موفقیت انجام شد .',
+                'alert-type' => 'success'
+            ];
+        return to_route('users.index')->with($notification);
 
     }
     public function destroy($id){
