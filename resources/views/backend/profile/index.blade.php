@@ -50,7 +50,7 @@
                         <div class="modalroozbeh" id="settings">
                             <form id="profileForm" action="{{ route('user.profile.store') }}" method="post" enctype="multipart/form-data">
                                 @csrf
-                                <h5 class="mb-4 text-uppercase"><i class="mdi mdi-account-circle me-1"></i> Personal Info</h5>
+                                <h5 class="mb-4 text-uppercase"><i class="mdi mdi-account-circle me-1"></i> اطلاعات شخصی</h5>
                                 <div class="row">
                                     <div class="col-md-6">
                                         <div class="mb-3">
@@ -67,7 +67,7 @@
                                     <div class="col-md-12 datepicker">
                                         <div class="mb-3">
                                             <label for="email" class="form-label">تاریخ تولد : </label>
-                                            <input value="{{ date(now()->format('Y-m-d')) }}"  name="dob" id="dob" data-jdp>
+                                            <input value="{{ !empty($adminData->dob) ? $adminData->dob : now()->toJalali()->format('Y-m-d') }}"  name="dob" id="dob" data-jdp>
                                         </div>
                                     </div> <!-- end col -->
 
