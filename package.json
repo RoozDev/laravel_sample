@@ -16,5 +16,8 @@
         "bootstrap": "^5.2.3",
         "laravel-mix": "^6.0.49",
         "sass": "^1.56.1"
+    },
+    "dependencies": {
+        "@majidh1/jalalidatepicker": "^0.9.3"
     }
 }

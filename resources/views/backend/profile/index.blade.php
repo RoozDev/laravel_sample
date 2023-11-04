@@ -25,11 +25,7 @@
                     <img src="{{ !empty($adminData->photo) ? url('upload/admin_images/'.$adminData->photo) : url('upload/no_image.jpg') }}" class="rounded-circle avatar-lg img-thumbnail"
                          alt="profile-image">
 
-                    <h4 class="mb-0">{{ $adminData->name }}</h4>
-                    <p class="text-muted">{{ $adminData->email }}</p>
 
-                    <button type="button" class="btn btn-success btn-xs waves-effect mb-2 waves-light">Follow</button>
-                    <button type="button" class="btn btn-danger btn-xs waves-effect mb-2 waves-light">Message</button>
 
                     <div class="text-start mt-3">
 
@@ -51,7 +47,7 @@
 
                     <div class="tab-content">
 
-                        <div class="" id="settings">
+                        <div class="modalroozbeh" id="settings">
                             <form id="profileForm" action="{{ route('user.profile.store') }}" method="post" enctype="multipart/form-data">
                                 @csrf
                                 <h5 class="mb-4 text-uppercase"><i class="mdi mdi-account-circle me-1"></i> Personal Info</h5>
@@ -66,6 +62,12 @@
                                         <div class="mb-3">
                                             <label for="email" class="form-label">ایمیل / پست الکترونیک : </label>
                                             <input type="email" name="email" class="form-control" id="email" placeholder="پست الکترونیک / ایمیل خود را وارد کنید ..." value="{{ $adminData->email }}">
+                                        </div>
+                                    </div> <!-- end col -->
+                                    <div class="col-md-12 datepicker">
+                                        <div class="mb-3">
+                                            <label for="email" class="form-label">تاریخ تولد : </label>
+                                            <input value="{{ date(now()->format('Y-m-d')) }}"  name="dob" id="dob" data-jdp>
                                         </div>
                                     </div> <!-- end col -->
 
@@ -123,5 +125,30 @@
             });
         });
     </script>
+    <script>
 
+        jalaliDatepicker.startWatch({
+            container: '.modalroozbeh',
+            minDate: "attr",
+            maxDate: "attr",
+            minTime: "attr",
+            maxTime: "attr",
+            initDate: "attr",
+            hideAfterChange: true,
+            autoHide: true,
+            showTodayBtn: true,
+            showEmptyBtn: true,
+            topSpace: 10,
+            bottomSpace: 30,
+            dayRendering(opt,input){
+                return {
+                    isHollyDay:opt.day==1
+                }
+            }
+
+        });
+
+
+
+    </script>
 @endsection

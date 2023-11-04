@@ -7,6 +7,7 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Hash;
+use Hekmatinasser\Jalali\Jalalian;
 
 class UserController extends Controller
 {

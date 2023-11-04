@@ -19,7 +19,9 @@
 
                 <li class="dropdown notification-list topbar-dropdown">
                     <a class="nav-link dropdown-toggle nav-user me-0 waves-effect waves-light" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
-                        <img src="{{ asset('backend/assets/images/users/user-1.jpg') }}" alt="user-image" class="rounded-circle">
+                        <img src="{{ !empty($adminData->photo) ?
+                                                          url('upload/admin_images/'.$adminData->photo) :
+                                                          url('upload/no_image.jpg')}}" alt="user-image" class="rounded-circle">
                         <span class="pro-user-name ms-1">
                                    {{ Illuminate\Support\Facades\Auth::user()->name }}
                                     <i class="mdi mdi-chevron-down"></i>
@@ -27,9 +29,7 @@
                     </a>
                     <div class="dropdown-menu dropdown-menu-end profile-dropdown ">
                         <!-- item-->
-                        <div class="dropdown-header noti-title">
-                            <h6 class="text-overflow m-0">Welcome !</h6>
-                        </div>
+
 
                         <!-- item-->
                         <a href="{{ route('user.profile') }}" class="dropdown-item notify-item">

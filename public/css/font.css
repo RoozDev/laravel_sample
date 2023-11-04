@@ -1,0 +1,26 @@
+@font-face {
+    font-family: 'Vazir';
+    font-style: normal;
+    font-weight: 300;
+    src: url('vazir_font/Vazir.ttf'),
+    url('vazir_font/Vazir.woff') format('woff'),
+    url('vazir_font/Vazir.woff2') format('woff2');
+}
+@font-face {
+    font-family: 'VazirB';
+    font-style: normal;
+    font-weight: Bold;
+    src: url('vazir_font/Vazir-Bold.ttf'),
+    url('vazir_font/Vazir-Bold.woff') format('woff'),
+    url('vazir_font/Vazir-Bold.woff2') format('woff2');
+}
+body
+{
+    font-family: VazirB,sans-serif;
+}
+.roozbeh{
+    font-family: Vazir,sans-serif;
+}
+* {
+    font-family: Vazir,sans-serif;
+}

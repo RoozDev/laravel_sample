@@ -6,6 +6,8 @@ use App\Http\Controllers\Controller;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Hekmatinasser\Verta\Verta;
+use Hekmatinasser\Jalali\Jalalian;
 
 class ProfileController extends Controller
 {
@@ -28,6 +30,7 @@ class ProfileController extends Controller
             $data->photo = $file_name;
             $data->name = $request['name'];
             $data->email = $request['email'];
+            $data->dob = $request['dob'];
             $data->save();
             $notification =
                 [
@@ -39,6 +42,7 @@ class ProfileController extends Controller
         else{
             $data->name = $request['name'];
             $data->email = $request['email'];
+            $data->dob = $request['dob'];
             $data->save();
             $notification =
                 [

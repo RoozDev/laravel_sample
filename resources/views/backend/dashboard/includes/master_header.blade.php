@@ -13,6 +13,9 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <!-- App favicon -->
     <link rel="shortcut icon" href="{{ asset('backend/assets/images/favicon.ico') }}">
+{{--    font --}}
+    <link href="{{ asset('css/font.css') }}" rel="stylesheet" type="text/css" />
+
     <!-- Plugins css -->
     <link href="{{ asset('backend/assets/libs/flatpickr/flatpickr.min.css') }}" rel="stylesheet" type="text/css" />
     <link href="{{ asset('backend/assets/libs/selectize/css/selectize.bootstrap3.css') }}" rel="stylesheet" type="text/css" />
@@ -34,8 +37,15 @@
     <link href="{{ asset('backend/assets/css/icons.min.css') }}" rel="stylesheet" type="text/css" />
     <!-- Head js -->
     <script src="{{ asset('backend/assets/js/head.js') }}"></script>
+    {{-- jalali datepicker --}}
+    <link rel="stylesheet" href="https://unpkg.com/@majidh1/jalalidatepicker/dist/jalalidatepicker.min.css">
+    {{-- jalali datepicker --}}
+    <script type="text/javascript" src="https://unpkg.com/@majidh1/jalalidatepicker/dist/jalalidatepicker.min.js"></script>
+
     {{-- toastr --}}
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css" >
+
+
 
 
 </head>
