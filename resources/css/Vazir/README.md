@@ -37,8 +37,8 @@ A Persian (Farsi) Font
 ```css
 @font-face {
     font-family: Vazir;
-    src: url('Vazir.eot');
-    src: url('Vazir.eot?#iefix') format('embedded-opentype'),
+    src: url('../../../public/css/vazir_font/Vazir.eot');
+    src: url('../../../public/css/vazir_font/Vazir.eot?#iefix') format('embedded-opentype'),
     url('../../assets/font/vazir_font/Vazir.woff') format('woff'),
     url('../../assets/font/vazir_font/Vazir.ttf') format('truetype');
     font-weight: normal;
@@ -46,8 +46,8 @@ A Persian (Farsi) Font
 
 @font-face {
     font-family: Vazir;
-    src: url('Vazir-Bold.eot');
-    src: url('Vazir-Bold.eot?#iefix') format('embedded-opentype'),
+    src: url('../../../public/css/vazir_font/Vazir-Bold.eot');
+    src: url('../../../public/css/vazir_font/Vazir-Bold.eot?#iefix') format('embedded-opentype'),
     url('../../assets/font/vazir_font/Vazir-Bold.woff') format('woff'),
     url('../../assets/font/vazir_font/Vazir-Bold.ttf') format('truetype');
     font-weight: bold;
@@ -55,8 +55,8 @@ A Persian (Farsi) Font
 
 @font-face {
     font-family: Vazir;
-    src: url('Vazir-Light.eot');
-    src: url('Vazir-Light.eot?#iefix') format('embedded-opentype'),
+    src: url('../../../public/css/vazir_font/Vazir-Light.eot');
+    src: url('../../../public/css/vazir_font/Vazir-Light.eot?#iefix') format('embedded-opentype'),
     url('Vazir-Light.woff') format('woff'),
     url('Vazir-Light.ttf') format('truetype');
     font-weight: 300;

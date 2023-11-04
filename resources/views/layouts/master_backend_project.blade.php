@@ -19,8 +19,8 @@
 
                 <li class="dropdown notification-list topbar-dropdown">
                     <a class="nav-link dropdown-toggle nav-user me-0 waves-effect waves-light" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
-                        <img src="{{ !empty($adminData->photo) ?
-                                                          url('upload/admin_images/'.$adminData->photo) :
+                        <img src="{{ !empty(\Illuminate\Support\Facades\Auth::user()->photo) ?
+                                                          url('upload/admin_images/'.\Illuminate\Support\Facades\Auth::user()->photo) :
                                                           url('upload/no_image.jpg')}}" alt="user-image" class="rounded-circle">
                         <span class="pro-user-name ms-1">
                                    {{ Illuminate\Support\Facades\Auth::user()->name }}
@@ -34,13 +34,13 @@
                         <!-- item-->
                         <a href="{{ route('user.profile') }}" class="dropdown-item notify-item">
                             <i class="fe-user"></i>
-                            <span>Profile</span>
+                            <span>نمایه کاربر</span>
                         </a>
 
                         <!-- item-->
                         <a href="{{ route('dashboard.logout') }}" class="dropdown-item notify-item">
                             <i class="fe-log-out"></i>
-                            <span>Logout</span>
+                            <span>خروج</span>
                         </a>
 
                     </div>
@@ -56,7 +56,7 @@
 
             <!-- LOGO -->
             <div class="logo-box">
-                <a href="index.html" class="logo logo-dark text-center">
+                <a href="{{ route('dashboard') }}" class="logo logo-dark text-center">
                             <span class="logo-sm">
                                 <img src="{{ asset('backend/assets/images/logo-sm.png') }}" alt="" height="22">
                                 <!-- <span class="logo-lg-text-light">UBold</span> -->
@@ -67,7 +67,7 @@
                             </span>
                 </a>
 
-                <a href="index.html" class="logo logo-light text-center">
+                <a href="{{ route('dashboard') }}" class="logo logo-light text-center">
                             <span class="logo-sm">
                                 <img src="{{ asset('backend/assets/images/logo-sm.png') }}" alt="" height="22">
                             </span>
