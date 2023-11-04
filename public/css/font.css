@@ -8,21 +8,15 @@
     url('vazir_font/Vazir.woff2') format('woff2');
 }
 @font-face {
-    font-family: 'VazirB';
-    src: url('vazir_font/Vazir-Bold.ttf');
-    src: url('vazir_font/Vazir-Bold.ttf?#iefix') format('embedded-opentype'),
-    url('vazir_font/Vazir-Bold.woff') format('woff'),
-    url('vazir_font/Vazir-Bold.woff2') format('woff2');
-    font-weight: Bold;
+    font-family: 'Vazir';
+    src: url(Vazir/Vazir.eot);
+    src: url(Vazir/Vazir.eot?#iefix) format('embedded-opentype'),
+    url(Vazir/Vazir.otf) format('otf'),
+    url(Vazir/Vazir.ttf) format('truetype'),
+    url(Vazir/Vazir.woff) format('woff'),
+    url(Vazir/Vazir.woff2) format('woff2');
 }
-@font-face {
-    font-family: 'VazirE';
-    src: url('vazir_font/Vazir.eot');
-    src: url('vazir_font/Vazir.eot?#iefix') format('embedded-opentype'),
-    url('vazir_font/Vazir-Bold.woff') format('woff'),
-    url('vazir_font/Vazir-Bold.woff2') format('woff2');
-    font-weight: Bold;
-}
+
 @font-face {
     font-family: 'Iranian_Sans';
     src: url(iransans/Iranian_Sans.eot);
@@ -32,11 +26,11 @@
     url(iransans/Iranian_Sans.ttf) format('truetype');
 }
 .roozbeh{
-    font-family: Vazir, sans-serif;
+    font-family: Iranian_Sans, sans-serif;
 }
 body{
-    font-family: Vazir, sans-serif ;
+    font-family: Iranian_Sans, sans-serif ;
 }
 * {
-    font-family: Vazir, 'sans-serif'
+    font-family: Iranian_Sans, sans-serif;
 }
