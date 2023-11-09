@@ -48,7 +48,7 @@
                     <div class="tab-content">
 
                         <div class="modalroozbeh" id="settings">
-                            <form id="profileForm" action="{{ route('user.profile.store') }}" method="post" enctype="multipart/form-data">
+                            <form class="roozbeh" id="profileForm" action="{{ route('user.profile.store') }}" method="post" enctype="multipart/form-data">
                                 @csrf
                                 <h5 class="mb-4 text-uppercase"><i class="mdi mdi-account-circle me-1"></i> اطلاعات شخصی</h5>
                                 <div class="row">

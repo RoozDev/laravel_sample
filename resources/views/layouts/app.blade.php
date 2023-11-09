@@ -70,12 +70,12 @@
                                     <!-- item-->
                                     <a href="{{ route('dashboard.logout') }}" class="dropdown-item notify-item">
                                         <i class="fe-log-out"></i>
-                                        <span>Logout</span>
+                                        <span>خروج</span>
                                     </a>
                                 </div>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('dashboard') }}">Dashboard</a>
+                                <a class="nav-link" href="{{ route('dashboard') }}">داشبورد</a>
                             </li>
                         @endguest
                     </ul>
