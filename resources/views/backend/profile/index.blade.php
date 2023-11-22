@@ -22,7 +22,7 @@
         <div class="col-lg-4 col-xl-4">
             <div class="card text-center">
                 <div class="card-body">
-                    <img src="{{ !empty($adminData['profile']['photo']) ? url('upload/admin_images/'.$adminData['profile']['photo']) : url('upload/no_image.jpg') }}" class="rounded-circle avatar-lg img-thumbnail"
+                    <img src="{{ !empty($adminData['profile'][0]['photo']) ? url($adminData['profile'][0]['photo']) : url('upload/no_image.jpg') }}" class="rounded-circle avatar-lg img-thumbnail"
                          alt="profile-image">
 
 
@@ -64,8 +64,8 @@
                                             <label for="example-fileinput" class="form-label">عکس نمایه</label>
                                             <input  name="photo" type="file" id="image" class="form-control">
                                             <br>
-                                            <img src="{{ !empty($adminData->profile->photo) ?
-                                                          url('upload/admin_images/'.$adminData->profile->photo) :
+                                            <img src="{{ !empty($adminData['profile'][0]['photo']) ?
+                                                          asset($adminData['profile'][0]['photo']) :
                                                           url('upload/no_image.jpg') }}"
                                                  class="rounded-circle avatar-lg img-thumbnail"
                                                  id="showImage"

@@ -19,8 +19,8 @@
 
                 <li class="dropdown notification-list topbar-dropdown">
                     <a class="nav-link dropdown-toggle nav-user me-0 waves-effect waves-light" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
-                        <img src="{{ !empty($adminData->profile->photo) ?
-                                                          url('upload/admin_images/'.\Illuminate\Support\Facades\Auth::user()->photo) :
+                        <img src="{{ !empty($adminData['profile'][0]['photo']) ?
+                                                          url(\Illuminate\Support\Facades\Auth::user()->profile[0]['photo']) :
                                                           url('upload/no_image.jpg')}}" alt="user-image" class="rounded-circle">
                         <span class="pro-user-name ms-1">
                                    {{ Illuminate\Support\Facades\Auth::user()->name }}
