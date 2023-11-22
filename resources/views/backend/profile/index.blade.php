@@ -22,7 +22,7 @@
         <div class="col-lg-4 col-xl-4">
             <div class="card text-center">
                 <div class="card-body">
-                    <img src="{{ !empty($adminData->photo) ? url('upload/admin_images/'.$adminData->photo) : url('upload/no_image.jpg') }}" class="rounded-circle avatar-lg img-thumbnail"
+                    <img src="{{ !empty($adminData['profile']['photo']) ? url('upload/admin_images/'.$adminData['profile']['photo']) : url('upload/no_image.jpg') }}" class="rounded-circle avatar-lg img-thumbnail"
                          alt="profile-image">
 
 
@@ -52,39 +52,53 @@
                                 @csrf
                                 <h5 class="mb-4 text-uppercase"><i class="mdi mdi-account-circle me-1"></i> اطلاعات شخصی</h5>
                                 <div class="row">
-                                    <div class="col-md-6">
-                                        <div class="mb-3">
-                                            <label for="firstname" class="form-label">نام</label>
-                                            <input type="text" name="name" class="form-control" id="firstname" placeholder="نام خود را وارد کنید ..." value="{{ $adminData->name }}">
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="mb-3">
-                                            <label for="email" class="form-label">ایمیل / پست الکترونیک : </label>
-                                            <input type="email" name="email" class="form-control" id="email" placeholder="پست الکترونیک / ایمیل خود را وارد کنید ..." value="{{ $adminData->email }}">
-                                        </div>
-                                    </div> <!-- end col -->
+
                                     <div class="col-md-12 datepicker">
                                         <div class="mb-3">
                                             <label for="email" class="form-label">تاریخ تولد : </label>
                                             <input value="{{ !empty($adminData->dob) ? $adminData->dob : now()->toJalali()->format('Y-m-d') }}"  name="dob" id="dob" data-jdp>
                                         </div>
                                     </div> <!-- end col -->
-
-
                                     <div class="col-md-12">
                                         <div class="mb-3">
                                             <label for="example-fileinput" class="form-label">عکس نمایه</label>
                                             <input  name="photo" type="file" id="image" class="form-control">
                                             <br>
-                                            <img src="{{ !empty($adminData->photo) ?
-                                                          url('upload/admin_images/'.$adminData->photo) :
-                                                          url('upload/no_image.jpg')}}"
+                                            <img src="{{ !empty($adminData->profile->photo) ?
+                                                          url('upload/admin_images/'.$adminData->profile->photo) :
+                                                          url('upload/no_image.jpg') }}"
                                                  class="rounded-circle avatar-lg img-thumbnail"
                                                  id="showImage"
                                                  alt="profile-image">
                                         </div>
                                     </div> <!-- end col -->
+                                    <div class="col-md-6">
+                                        <div class="col-lg-12">
+                                            <div class="mb-3">
+                                                <label class="form-label">شماره تلفن همراه :  </label>
+                                                <input
+                                                    type="text"
+                                                    name="phone"
+                                                    class="selectize-close-btn"
+                                                    value="
+                                                    @foreach($adminData->profile as $profilePhone)
+                                                    {{ $profilePhone['phone'] }}
+                                                    @endforeach"
+                                                    placeholder="شماره تلفن همراه خود را وارد کنید ..." >
+                                            </div>
+                                        </div>
+
+                                    </div> <!-- end col -->
+                                    <div class="col-md-6">
+                                        <div class="mb-3">
+                                            <label for="country" class="form-label">نام کشور:  </label>
+                                            <input type="text" name="country" class="form-control" id="country" placeholder="نام کشور خود را وارد کنید ..." value="@foreach($adminData->profile as $profileCountry){{  trim($profileCountry['country'])  }}@endforeach">
+                                        </div>
+                                    </div> <!-- end col -->
+
+
+
+
                                     <div class="col-md-6">
                                         <div class="mb-3">
 
